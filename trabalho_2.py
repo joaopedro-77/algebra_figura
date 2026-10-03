@@ -171,16 +171,17 @@ while num_transformacoes > 0:
             print("Numero invalido! Escolha um numero entre 0 e", len(nomes) - 1)
             continue
 
-        # antes de desfazer qualquer coisa, confere se todas tem inversa,
-        # para nao reverter so uma parte
-        tem_inversa = True
+        # verifica se alguma das transformacoes a reverter nao tem inversa (det = 0)
+        sem_inversa = []
         for j in range(k, len(matrizes)):
             if inversa(matrizes[j]) is None:
-                print(f"A transformacao {j + 1} ({nomes[j]}) tem det = 0, entao nao tem inversa e nao pode ser revertida.")
-                tem_inversa = False
-        if not tem_inversa:
-            continue
+                sem_inversa.append(j)
 
+        if len(sem_inversa) > 0:
+            for j in sem_inversa:
+                print(f"A transformacao {j + 1} ({nomes[j]}) tem det = 0, entao nao tem inversa e nao pode ser revertida.")
+            continue
+        
         # aplica a inversa na figura atual; o resultado e a figura de antes
         # daquela transformacao
         while len(nomes) > k:
