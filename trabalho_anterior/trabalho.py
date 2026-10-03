@@ -4,10 +4,10 @@ from desenho import desenhar, transformar
 # Mostra a pergunta e le um numero digitado pelo usuario.
 # Se ele digitar algo que nao e numero (ex: "abc"), avisa e pergunta de novo,
 # ate receber um valor valido. Retorna o numero como float.
-def ler_numero(pergunta):
+def ler_numero(pergunta) -> float:
     while True:
         try:
-            return float(input(pergunta))
+            return float(input(pergunta).replace(',', '.'))  # aceita tanto ponto quanto virgula
         except ValueError:
             print("Entrada invalida! Digite um numero.")
 
@@ -28,8 +28,8 @@ while True:
 pontos = []
 for i in range(n):
     print(f"Ponto {i + 1}:")
-    x = ler_numero("  x = ")
-    y = ler_numero("  y = ")
+    x = ler_numero(" x = ")
+    y = ler_numero(" y = ")
     pontos.append((x, y))
 
 # centro da figura = media dos x e media dos y
