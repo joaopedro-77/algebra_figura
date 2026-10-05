@@ -17,6 +17,11 @@ def transformar(pontos: list[tuple[float, float]], m: list[list[float]], cx: flo
 # Calcula a inversa da matriz 2x2 [[a, b], [c, d]]:
 #   inversa = 1/det * [[d, -b], [-c, a]], com det = a*d - b*c
 # Se det = 0 a matriz nao tem inversa (ex: escala com 0) e retorna None.
+
+# calcular o determinante, trocar a posição da diagonal principal, 
+# inverter o sinal da diagonal secundária 
+# e dividir tudo pelo determinante.
+
 def inversa(m: list[list[float]]) -> list[list[float]] | None:
     a, b = m[0]
     c, d = m[1]

@@ -59,10 +59,10 @@ def desenhar(figuras: list[list[tuple[float, float]]]) -> None:
 
     # numeros nos eixos. O passo cresce junto com a tela para os numeros
     # nao ficarem amontoados (tela pequena: 1, 2, 3... tela grande: 2, 4, 6...)
-    passo = int(t / 5) + 1
+    passo = int(t / 5) + 1 # 9
     turtle.color("gray")
-    for i in range(-int(t), int(t) + 1):
-        if i % passo == 0 and i != 0:
+    for i in range(-int(t), int(t) + 1): # -9, -8, -7, ..., 0, 1, 2, ..., 9
+        if i % passo == 0 and i != 0: # so mostra os numeros que sao multiplos do passo, e nao mostra o 0
             turtle.penup()
             turtle.goto(i, 0)  # no eixo x
             turtle.dot(4)
