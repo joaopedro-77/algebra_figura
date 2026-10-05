@@ -25,3 +25,7 @@ def inversa(m: list[list[float]]) -> list[list[float]] | None:
         return None
     return [[d / det, -b / det],
             [-c / det, a / det]]
+
+# det = 1 a area da figura nao muda; 
+# det > 1 aumenta a area; 0 < det < 1 diminui a area;
+# det < 0 inverte a figura (espelha) e aumenta/diminui a area de acordo com o valor absoluto do det.

@@ -62,7 +62,7 @@ for i in range(n):
 
 abrir_janela()  # abre a janela do turtle para desenhar
 
-# centro da figura = media dos x e media dos y
+# centro da figura = media aritmetica dos x e media aritmetica dos y
 cx = 0
 cy = 0
 for x, y in pontos:
